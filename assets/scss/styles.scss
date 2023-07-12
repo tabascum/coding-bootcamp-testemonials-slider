@@ -1,56 +1,51 @@
 @use "base";
 
 .slide-wrapper {
-  height: 100vh;
-  max-width: 1440px;
-  scroll-behavior: smooth;
+  min-height: 100vh;
+  width: 100%;
   display: flex;
   align-items: center;
-  flex-direction: column;
   justify-content: center;
-  margin: 1rem;
-  position: relative;
-  overflow: hidden;
+  padding: 1rem;
+  background: url("../../images/pattern-curve.svg") left bottom no-repeat;
+  background-size: contain;
 
   .slide-container {
-    height: calc(100vh - 2rem);
+    height: 100%;
     width: 100%;
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    overflow: scroll;
-    scroll-behavior: smooth;
-    margin-inline-start: 20vw;
+    display: block;
+    margin: 0 auto;
+    max-width: 850px;
+    position: relative;
 
     .slide {
-      display: inherit;
-      align-items: center;
-      font-weight: base.$font-light;
-      color: base.$dark-blue;
       width: 100%;
-      height: 100%;
-      flex: 1 0 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column-reverse;
+      font-weight: base.$font-light;
+      justify-content: center;
+      color: base.$dark-blue;
+      text-align: center;
 
       > :first-child {
         display: inherit;
-        flex-direction: column;
+        align-items: center;
         justify-content: center;
-        min-height: 84vh;
-        max-width: 40rem;
-        z-index: 1;
-        gap: 2rem;
-        background: url("../../images/pattern-quotes.svg") 20rem 33.5% fixed
-          no-repeat;
-        margin-block-start: 5rem;
-        margin-inline-end: -10rem;
-        line-height: 1.4;
+        flex-direction: column;
+        background: url("../../images/pattern-quotes.svg") top center no-repeat;
+        background-size: 5rem;
+        margin-block: 1.5rem;
+        padding: 1.5rem;
+        gap: 1.5rem;
+        line-height: 1;
 
         > :nth-child(2) {
           font-size: 20px;
           display: flex;
           gap: 0.5rem;
           font-weight: base.$font-bold;
+          flex-direction: column;
 
           > :nth-child(2) {
             color: base.$grayish-blue;
@@ -60,52 +55,92 @@
       }
 
       > :nth-child(2) {
-        min-height: 84vh;
-        min-width: 44rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        padding: 2.5rem;
         background: url("../../images/pattern-bg.svg") center no-repeat;
+        background-size: contain;
 
-        img {
-          max-width: 33rem;
+        > img {
+          height: 100%;
+          width: 20rem;
           border-radius: 0.5rem;
           filter: drop-shadow(0 0.1rem 0.5rem base.$grayish-blue);
         }
       }
     }
   }
+}
 
-  .slide-buttons {
-    padding: 1rem 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 2rem;
-    filter: drop-shadow(0.3rem 0.3rem 1rem base.$grayish-blue);
-    width: 7rem;
-    z-index: 2;
-    position: fixed;
-    bottom: 6.7rem;
-    right: 39rem;
-    background-color: white;
+.slide-buttons {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 22rem;
+  width: 6rem;
+  height: 2.5rem;
+  border-radius: 2rem;
+  z-index: 1;
+  overflow: hidden;
+  background-color: white;
+  filter: drop-shadow(0.1rem 0.1rem 0.7rem base.$grayish-blue);
 
-    > :hover {
-      cursor: pointer;
-    }
+  :hover {
+    cursor: pointer;
+    background-color: azure;
+  }
 
-    :nth-child(n) {
-      background-color: transparent;
-      border: none;
-    }
+  #slide-prev,
+  #slide-next {
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-radius: 1.5rem;
+  }
 
-    img {
-      width: 0.8rem;
-    }
+  #slide-prev:hover,
+  #slide-next:hover {
+    background-color: antiquewhite;
+  }
+
+  #slide-prev {
+    left: 0;
+    background: url("../../images/icon-prev.svg") no-repeat center;
+    background-size: auto;
+  }
+
+  #slide-next {
+    right: 0;
+    background: url("../../images/icon-next.svg") no-repeat center;
+    background-size: auto;
   }
 }
 
-.slide-container::-webkit-scrollbar {
-  height: 0;
-  width: 0;
+@media only screen and (min-width: 768px) {
+  .slide {
+    flex-direction: row;
+    text-align: left;
+  }
+  .slide-text {
+    background-position: 10% top;
+    background-size: 100px;
+    align-items: flex-start;
+  }
+  .slide-img {
+    margin-left: -100px;
+    z-index: -1;
+  }
+  .slide-img img {
+    width: 400px;
+  }
+  .buttons {
+    top: 415px;
+    transform: translate(0);
+    left: calc(100% - 400px);
+  }
 }
