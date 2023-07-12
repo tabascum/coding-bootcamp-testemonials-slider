@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body::before {
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: -2;
+  background: url("../../images/pattern-curve.svg") left bottom no-repeat;
+}
+
+body {
+  height: 100vh;
+  font-size: 32px;
+  font-family: "Inter", sans-serif;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+.slide-wrapper {
+  height: 100vh;
+  max-width: 1440px;
+  scroll-behavior: smooth;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.slide-wrapper .slide-container {
+  height: calc(100vh - 2rem);
+  width: 100%;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+  scroll-behavior: smooth;
+  margin-inline-start: 20vw;
+}
+.slide-wrapper .slide-container .slide {
+  display: inherit;
+  align-items: center;
+  font-weight: 300;
+  color: hsl(240, 38%, 20%);
+  width: 100%;
+  height: 100%;
+  flex: 1 0 100%;
+}
+.slide-wrapper .slide-container .slide > :first-child {
+  display: inherit;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 84vh;
+  max-width: 40rem;
+  z-index: 1;
+  gap: 2rem;
+  background: url("../../images/pattern-quotes.svg") 20rem 33.5% fixed no-repeat;
+  margin-block-start: 5rem;
+  margin-inline-end: -10rem;
+  line-height: 1.4;
+}
+.slide-wrapper .slide-container .slide > :first-child > :nth-child(2) {
+  font-size: 20px;
+  display: flex;
+  gap: 0.5rem;
+  font-weight: 700;
+}
+.slide-wrapper .slide-container .slide > :first-child > :nth-child(2) > :nth-child(2) {
+  color: hsl(240, 18%, 77%);
+  font-weight: 500;
+}
+.slide-wrapper .slide-container .slide > :nth-child(2) {
+  min-height: 84vh;
+  min-width: 44rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("../../images/pattern-bg.svg") center no-repeat;
+}
+.slide-wrapper .slide-container .slide > :nth-child(2) img {
+  max-width: 33rem;
+  border-radius: 0.5rem;
+  filter: drop-shadow(0 0.1rem 0.5rem hsl(240, 18%, 77%));
+}
+.slide-wrapper .slide-buttons {
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 2rem;
+  filter: drop-shadow(0.3rem 0.3rem 1rem hsl(240, 18%, 77%));
+  width: 7rem;
+  z-index: 2;
+  position: fixed;
+  bottom: 6.7rem;
+  right: 39rem;
+  background-color: white;
+}
+.slide-wrapper .slide-buttons > :hover {
+  cursor: pointer;
+}
+.slide-wrapper .slide-buttons :nth-child(n) {
+  background-color: transparent;
+  border: none;
+}
+.slide-wrapper .slide-buttons img {
+  width: 0.8rem;
+}
+
+.slide-container::-webkit-scrollbar {
+  height: 0;
+  width: 0;
+}
+
+/*# sourceMappingURL=styles.css.map */
