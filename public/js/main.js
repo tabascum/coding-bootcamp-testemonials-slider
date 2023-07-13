@@ -1,34 +1,30 @@
-const slidesContainer = document.querySelector(".slide-container");
-const prevButton = document.getElementById("slide-prev");
-const nextButton = document.getElementById("slide-next");
+const slides = document.querySelectorAll(".slide");
+const prev = document.getElementById("slide-prev");
+const next = document.getElementById("slide-next");
 
-/* let i = 0;
-
-function display(i) {
-  slidesContainer.forEach((slide) => {
+let index = 0;
+display(index);
+function display(index) {
+  slides.forEach((slide) => {
     slide.style.display = "none";
   });
-  slidesContainer[i].style.display = "flex";
+  slides[index].style.display = "flex";
 }
-
-display(i);
 
 function nextSlide() {
-  i++;
-  if (i > slidesContainer.length - 1) {
-    i = 0;
+  index++;
+  if (index > slides.length - 1) {
+    index = 0;
   }
-  display(i);
+  display(index);
 }
-
 function prevSlide() {
-  i--;
-  if (i < 0) {
-    i = slidesContainer.length - 1;
+  index--;
+  if (index < 0) {
+    index = slides.length - 1;
   }
-  display(i);
+  display(index);
 }
 
-nextButton.addEventListener("click", nextSlide);
-prevButton.addEventListener("click", prevSlide);
- */
+next.addEventListener("click", nextSlide);
+prev.addEventListener("click", prevSlide);
