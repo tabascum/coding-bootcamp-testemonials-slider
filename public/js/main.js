@@ -4,6 +4,7 @@ const next = document.getElementById("slide-next");
 
 let index = 0;
 display(index);
+
 function display(index) {
   slides.forEach((slide) => {
     slide.style.display = "none";
@@ -18,6 +19,7 @@ function nextSlide() {
   }
   display(index);
 }
+
 function prevSlide() {
   index--;
   if (index < 0) {

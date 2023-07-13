@@ -22,7 +22,7 @@ $desktop: 768px;
     position: relative;
 
     @media (min-width: 850px) {
-      max-width: 860px;
+      max-width: 887px;
     }
 
     .slide {
@@ -111,7 +111,7 @@ $desktop: 768px;
           }
 
           @media (max-width: 430px) {
-            width: 15rem;
+            max-width: 15rem;
           }
         }
       }
@@ -123,23 +123,22 @@ $desktop: 768px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 27rem;
+  top: 21.6rem;
   width: 5rem;
   height: 2.5rem;
   border-radius: 2rem;
-  z-index: 1;
   overflow: hidden;
   background-color: white;
   filter: drop-shadow(0.1rem 0.1rem 0.7rem base.$grayish-blue);
 
   @media (min-width: 850px) {
-    top: 36.4rem;
-    transform: translate(-24rem);
+    top: 28.3rem;
+    transform: translate(-1rem);
     left: calc(100% - 25.5rem);
   }
 
   @media (max-width: 430px) {
-    top: 21.6rem;
+    top: 15.6rem;
   }
 
   :hover {
